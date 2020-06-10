@@ -1,0 +1,23 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border-radius: 8px;
+  height: 60%;
+  width: 33%;
+  	margin : 100px;	
+}
+
+.Search {
+	width : 33%;
+	height : 35px;
+}
+
+.card {
+	width : 370px;
+}
+.card:hover {
+	background : #ffff4d;
+}

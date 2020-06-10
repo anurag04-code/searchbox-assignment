@@ -1,4 +1,4 @@
-[
+const  data = [
   {
     "id": "123-s2-546",
     "name": "John Jacobs",
@@ -63,3 +63,5 @@
     "pincode": "4xx032"
   }
 ]
+
+export default data
