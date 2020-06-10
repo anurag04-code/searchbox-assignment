@@ -1,59 +1,25 @@
 import React from 'react'
 import './styles.css'
-import {Card, CardBody, CardText, CardTitle, CardSubtitle} from 'reactstrap'
 import data from './data.js'
+import List from './List.js'
+
+const App = () => {
+	const [searchTerm,setSearchTerm] = React.useState('')
+	const [searchResult,setSearchResult] = React.useState([])
 	
-class App extends React.Component  {
-	constructor(props) {
-    super(props);
-    this.myRef = React.createRef();
-	this.state = {
-		searchTerm : '',
-		searchResult : []
-	}
-	this.handleChange = this.handleChange.bind(this)	
-  }
-	handleChange(event) {
-		this.setState({
-			searchTerm : event.target.value
-		})
-		const results = data.filter(term => term.name.toLowerCase().includes(this.searchTerm))
-		if(results === null){
-			results = []
-		}
-			this.setState({
-				searchResult : results
-			})
-	}
-	componentDidMount() {
-    	this.moveFocus();
+    const handleChange = event => {
+   		 setSearchTerm(event.target.value);
   	}
-  moveFocus() {
-    const node = this.myRef.current;
-    node.addEventListener('keydown', function(e) {
-      const active = document.activeElement;
-      if(e.keyCode === 40 && active.nextSibling) {
-        active.nextSibling.focus();
-      }
-      if(e.keyCode === 38 && active.previousSibling) {
-        active.previousSibling.focus();
-      }
-    });
-  }
-	render(){
+	 React.useEffect(() => {
+    const results = data.filter(person =>person.name.toLowerCase().includes(searchTerm)
+    );
+    setSearchResult(results);
+  }, [searchTerm]);
 	return(
-			<div className='container'>
-				<input type='text' placeholder='Search...' className='Search' value={this.searchTerm} onChange={this.handleChange}/>
-				{this.searchResult.map(item =>
-					<Card className='card' ref={this.myRef}>
-						<CardTitle>{item.id}</CardTitle>
-						<CardSubtitle>{item.name}</CardSubtitle>			  
-						<CardBody>
-							<CardText>{item.address}</CardText>
-						</CardBody>
-					</Card>			  
-								 )}
-			</div>)
-}
+		<div className='container'>
+			<input className='Search' type='text' value={searchTerm} placeholder='Search..' onChange={handleChange}  ></input>
+			<List searchResult={searchResult} searchTerm={searchTerm}/>
+		</div>
+	)
 }
 export default App

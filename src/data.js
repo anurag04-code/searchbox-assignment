@@ -1,4 +1,4 @@
-const  data = [
+ const data = [
   {
     "id": "123-s2-546",
     "name": "John Jacobs",
@@ -64,4 +64,4 @@ const  data = [
   }
 ]
 
-export default data
+ export default data
