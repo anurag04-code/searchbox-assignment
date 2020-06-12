@@ -35,7 +35,7 @@ const App = () => {
     setSearchResult(results);
   }, [searchTerm]);
 	return(
-		<div className='container'>
+		<div>
 			<input className='Search' type='text' value={searchTerm} placeholder='Search..' onChange={handleChange} onKeyDown={handlekey}></input>
 			<List searchResult={searchResult} searchTerm={searchTerm} active={active}/>	
 		</div>
