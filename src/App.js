@@ -17,12 +17,15 @@ const App = () => {
 				setactive(0)
 			}
 			else{
-				setactive(active + 1)
+				if(active === searchResult.length){
+					setactive(0)
+				}else
+				{setactive(active + 1)}
 			}
 		}
 		if(event.key === 'ArrowUp'){
 			if(active !== 0 && active<=searchResult.length){
-			setactive(active - 1)
+				setactive(active - 1)
 			}
 		}
 	}
