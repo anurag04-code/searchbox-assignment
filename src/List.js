@@ -6,13 +6,15 @@ const List = ({searchResult, searchTerm, active}) => {
 	{	
 		return(
 				searchResult.map((item,i) => 
-				<Card className={i === active ? 'active' : null} id={ active == null || active >= searchResult.length ? 'card' : null}>			 
+				<Card className={i === active ? 'active' : null} id={ active == null || active >= searchResult.length ? 'card' : null}>		
 					<CardTitle>{item.id}</CardTitle>
 					<CardSubtitle>{item.name}</CardSubtitle>
 					<CardBody>
 						<CardText>{item.address}</CardText>
-					</CardBody>
-				</Card>				)
+					</CardBody>			
+					<hr />				 
+				</Card>
+							)
 	)}
 	else{
 		return(null)

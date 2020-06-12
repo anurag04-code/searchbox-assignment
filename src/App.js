@@ -6,7 +6,7 @@ import List from './List.js'
 const App = () => {
 	const [searchTerm,setSearchTerm] = React.useState('')
 	const [searchResult,setSearchResult] = React.useState([])
-	const [active,setactive] = React.useState(null)
+	const [active,setactive] = React.useState()
 	
     const handleChange = event => {
    		 setSearchTerm(event.target.value);
@@ -15,9 +15,8 @@ const App = () => {
 		if(event.key === 'ArrowDown'){
 			if(active === null){
 				setactive(0)
-			}
-			else{
-				if(active === searchResult.length){
+			}else{
+				if(active === searchResult.length ){
 					setactive(0)
 				}else
 				{setactive(active + 1)}
@@ -27,6 +26,9 @@ const App = () => {
 			if(active !== 0 && active<=searchResult.length){
 				setactive(active - 1)
 			}
+		}
+		if(searchTerm === ''){
+			setactive(null)
 		}
 	}
 	 React.useEffect(() => {

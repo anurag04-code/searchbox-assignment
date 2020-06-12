@@ -1,6 +1,6 @@
 
 .Search {
-	width : 33%;
+	width : 29%;
 	height : 35px;
 }
 
@@ -12,4 +12,8 @@
 }
 .active {
 	background : #ffff4d !important;
+}
+hr {
+	margin-block-start : 0px;
+	margin-block-end : 0px;
 }
