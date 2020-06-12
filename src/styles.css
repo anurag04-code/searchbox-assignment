@@ -18,8 +18,8 @@
 .card {
 	width : 370px;
 }
-.card:hover {
-	background : #ffff4d;
+#card:hover {
+	background : #ffff4d ;
 }
 .active {
 	background : #ffff4d !important;

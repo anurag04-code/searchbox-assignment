@@ -34,7 +34,7 @@ const App = () => {
 	return(
 		<div className='container'>
 			<input className='Search' type='text' value={searchTerm} placeholder='Search..' onChange={handleChange} onKeyDown={handlekey}></input>
-			<List searchResult={searchResult} searchTerm={searchTerm} active={active}/>
+			<List searchResult={searchResult} searchTerm={searchTerm} active={active}/>	
 		</div>
 	)
 }
