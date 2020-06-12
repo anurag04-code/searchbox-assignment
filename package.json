@@ -11,6 +11,7 @@
     "font-awesome": "^4.7.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-keydown": "^1.9.12",
     "react-popper": "^2.2.3",
     "react-scripts": "3.4.1",
     "react-select": "^3.1.0",
